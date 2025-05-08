@@ -9,8 +9,15 @@ import java.util.Scanner;
  */
 public class Main {
     
-    //Usuarios nombre = new Usuarios();
- 
+    public void Categorias(String ciencia, String literatura, String ingenieria){
+        
+        System.out.println("Elija la categoria que prefiera: ");
+        System.out.println("1. Ciencia");
+        System.out.println("2. Licenciatura");
+        System.out.println("3. Ingenieria");
+    
+    }
+    
     public static void main(String[] args) {
         
         // Inicializa la libreria Scanner
@@ -23,7 +30,10 @@ public class Main {
         int tipoDeUsuario;
         
         
-        
+        // Para agregar libros
+        Libros[] libros = new Libros[10];
+        int numLibros = 0;
+           
         
 
         // Ingresa el nombre del usuario
@@ -45,10 +55,16 @@ public class Main {
             
             case 1:
                 System.out.println("Como 'ESTUDIANTE' tiene derecho a retirar hasta 3 libros");
+                        System.out.print("Título del libro: ");
+                        String titulo = lector.nextLine();
+                        libros[numLibros++] = new Libros(titulo);
+                        System.out.println("Libro registrado.");
+                
                 
                 break;
             case 2:
                 System.out.println("Como 'DOCENTE' tiene derecho a retirar hasta 5 libros");
+                
                 
                 break;
             default:
